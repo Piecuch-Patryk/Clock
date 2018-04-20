@@ -1,4 +1,4 @@
-// zegarek z data;  --- start when DOM loaded ---
+// clock & date;  --- start when DOM loaded ---
 document.addEventListener("DOMContentLoaded", function () {
     // refresh clock every second;
     setInterval(getTime, 1000);
