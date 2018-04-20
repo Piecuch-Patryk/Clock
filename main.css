@@ -24,12 +24,28 @@ html {
     background-position: center;
     z-index: -1;
 }
+/*main title&logo wrapper*/
+.grid-wrap {
+    display: inline-grid;
+    grid-template-columns: 20% 80%;
+    width: 100%;
+}
+.grid-item{
+    align-self: center;
+}
+/*page logo*/
+.logo {
+    text-align: center;
+}
+.logo img {
+    width: 50%;
+    margin: 0 auto;
+}
 /*page main title*/
 .main-title {
     text-align: center;
     color: rgb(237, 25, 74);
     font-size: 3rem;
-    padding: 1rem;
     letter-spacing: .2rem;
 }
 /*main navigation*/
@@ -52,6 +68,9 @@ html {
 .nav-el:hover {
     color: rgb(62, 121, 180);
     cursor: pointer;
+}
+.active-nav {
+    color: rgb(62, 121, 180);
 }
 /*clock container*/
 .zone-title-wrap {
