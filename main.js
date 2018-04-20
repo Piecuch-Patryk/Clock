@@ -25,7 +25,7 @@ function getTime() {
         second = "0" + second
     }
     // set refreshed time;
-    var newTime = hour + ":" + minute + ":" + second;
+    var newTime = document.createTextNode(hour + ":" + minute + ":" + second);
     // call function getDate;
     getDate(newTime);
 }
@@ -49,21 +49,35 @@ function getDate(el) {
         day = "0" + day;
     }
     // set new date;
-    var newDate = year + "/" + month + "</br>" + day;
+    const newDate = document.createTextNode(year + "/" + month),
+          newDay = document.createTextNode(day);
     // call function to concacenate strings;
-    refreshClock(el, newDate);
+    refreshClock(el, newDay, newDate);
 }
 // merge strings to change innerHtml;
-function refreshClock(time, date) {
-    var actualTime = date + "</br>" + time;
+function refreshClock(time, day, date) {
+    const spanTime = document.createElement('span'),
+          spanDay = document.createElement('span'),
+          spanDate = document.createElement('span');
+    spanTime.classList.add('spanTime');
+    spanTime.appendChild(time);
+    spanDay.classList.add('spanDay');
+    spanDay.appendChild(day);
+    spanDate.classList.add('spanDate');
+    spanDate.appendChild(date);
+    const actualTime = [spanDate, spanDay, spanTime];
+    console.log(actualTime);
     // call function to change innerHtml in div#clock;
-    //    console.log(actualTime)
     changeInner(actualTime);
 }
 // change innerHtml for div#clock;
-function changeInner(el) {
+function changeInner(array) {
     // get div#clock to change innerHtml;
-    var divToChange = document.getElementById("clock");
-    divToChange.innerHTML = el;
+    const divToChange = document.getElementById("clock");
+    // clear inner html;
+    divToChange.innerHTML = '';
+    for(let i = 0; i < array.length; i++){
+        divToChange.appendChild(array[i]);
+    };
     //    console.log()
 }

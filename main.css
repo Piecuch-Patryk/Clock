@@ -47,13 +47,43 @@ html {
 .nav-el {
     color: rgb(237, 25, 74);
     font-size: 2rem;
+    transition: .5s;
 }
-
+.nav-el:hover {
+    color: rgb(62, 121, 180);
+    cursor: pointer;
+}
+/*clock container*/
+.zone-title-wrap {
+    padding: 1rem;
+}
+.zone-title {
+    text-align: center;
+    color: rgb(62, 121, 180);
+    font-size: 2rem;
+    letter-spacing: .1rem;
+}
+.zone-subtitle {
+    display: block;
+    text-align: center;
+    color: #aaaaaa;
+    font-size: 1.2rem;
+    padding: .2rem;
+}
 .timer {
-    color: rgb(237, 25, 74);
+    color: rgb(62, 121, 180);
     font-weight: bold;
     text-align: center;
     font-size: 20px;
+}
+/*actual date&time*/
+.spanDate, .spanDay, .spanTime {
+    display: block;
+    padding: .5rem;
+    letter-spacing: .1rem;
+}
+.span-day {
+    color: rgb(237, 25, 74);
 }
 /*footer*/
 .footer-fixed {
