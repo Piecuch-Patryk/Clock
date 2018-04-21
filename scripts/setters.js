@@ -1,12 +1,13 @@
+var flag = false;
 // increase time locally and calibrate with server every minute;
 const increaseTime = function(el){
     const array = el.split(':'),
           timeContainer = document.getElementById('time');
+          
     var hours = Number(array[0]),
         minutes = Number(array[1]),
         seconds = Number(array[2]);
-    
-    console.log(hours + ':' + minutes + ':' + seconds);
+
     // increase time;
     var counter = setInterval(function(){
         // these variables are cleared every second, important;
@@ -51,10 +52,12 @@ const increaseTime = function(el){
         const actualTime = `${h}:${m}:${s}`;
         // place time in DOM;
         timeContainer.innerHTML = actualTime;
-        
+
         console.log(actualTime);
-        
+
     }, 1000);
+    console.log();
+    
     // calibrate every five minutes;
     setTimeout(function calibrateTime(){
         // current time zone name;
