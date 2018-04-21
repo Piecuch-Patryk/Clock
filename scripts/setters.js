@@ -1,13 +1,11 @@
-var flag = false;
 // increase time locally and calibrate with server every minute;
 const increaseTime = function(el){
-    const array = el.split(':'),
+    const array = el[2].split(':'),
           timeContainer = document.getElementById('time');
           
     var hours = Number(array[0]),
         minutes = Number(array[1]),
         seconds = Number(array[2]);
-
     // increase time;
     var counter = setInterval(function(){
         // these variables are cleared every second, important;
@@ -52,9 +50,8 @@ const increaseTime = function(el){
         const actualTime = `${h}:${m}:${s}`;
         // place time in DOM;
         timeContainer.innerHTML = actualTime;
-
-        console.log(actualTime);
-
+        // animate clock hands; rotate depending on given time;
+        rotateHands(actualTime, el[1]);
     }, 1000);
     console.log();
     

@@ -17,11 +17,11 @@ const actualTimeDate = function(str, zoneName){
                     day.innerHTML = currentTimeDate[0];
                     date.innerHTML = currentTimeDate[1];
                     // increase values; calibrate time every five minutes;
-                    increaseTime(currentTimeDate[2]);
+                    increaseTime(currentTimeDate);
                 }
                 else {
                     // increase values; calibrate time every five minutes;
-                    increaseTime(currentTimeDate[2]);
+                    increaseTime(currentTimeDate);
                 }
             }
         }
