@@ -2,9 +2,10 @@
 // set time zone;
 date_default_timezone_set('Europe/London');
 // actual server time&date;
-$date = date('D/d');
+$day = date('l');
+$date = date('d/M');
 $time = date('H:i:s');
 
-echo json_encode(array($date, $time));
+echo json_encode(array($day, $date, $time));
 
 ?>
