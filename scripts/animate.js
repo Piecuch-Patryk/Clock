@@ -5,7 +5,7 @@ const rotateHands = function(str, num){
           // count current degree;
           seconds = 6 * Number(str.split(':').splice(2, 1)) - 90,
           minutes = 6 * Number(str.split(':').splice(1, 1)) - 90,
-          hours = 30 * ((str.split(':').splice(0, 1) % 12) + minutes / 60) - 45,
+          hours = 6 * Number(((str.split(':').splice(0, 1))) + minutes / 60) - 90,
           date = num.split('/').splice(0, 1);
           
     hands[0].style.transform = 'rotate(' + seconds + 'deg)';
