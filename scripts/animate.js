@@ -1,3 +1,4 @@
+// count degree and rotate clock hands;
 const rotateHands = function(str, num){
     const hands = document.getElementsByClassName('hand-clock'),
           dateContainer = document.querySelector('.date-box'),
