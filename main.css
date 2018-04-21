@@ -30,6 +30,11 @@ html {
     grid-template-columns: 20% 80%;
     width: 100%;
 }
+@media only screen and (max-width: 500px){
+    .grid-wrap {
+        padding: 1rem 0;
+    }
+}
 .grid-item{
     align-self: center;
 }
@@ -103,6 +108,134 @@ html {
 }
 .span-day {
     color: rgb(237, 25, 74);
+}
+/*analog watch*/
+
+.analog-clock {
+    width: 30rem;
+    height: 30rem;
+    margin: 2rem auto 0 auto;
+}
+.face-clock {
+    height: 100%;
+    border-radius: 50%;
+    position: relative;
+    box-shadow: 0 0 2rem rgba(255, 255, 255, .5);
+}
+.dot-clock {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 5%;
+    width: 5%;
+    background-color: rgba(0, 0, 0, 1);
+    border-radius: 50%;
+    z-index: 100;
+}
+.hand-seconds, .hand-minutes, .hand-hours {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 35%;
+    height: 1%;
+    border-bottom-right-radius: 50%;
+    border-top-right-radius: 50%;
+    background-color: rgb(237, 25, 74);
+    transform-origin: left;
+    transform: translateY(-50%) rotate(180deg);
+}
+.hand-sec-dot {
+    position: absolute;
+    top: 50%;
+    left: 75%;
+    width: 10%;
+    height: 350%;
+    transform: translateY(-50%);
+    background-color: rgb(62, 121, 180);
+    border-radius: 50%;
+}
+.hand-minutes {
+    transform: rotate(90deg);
+    background-color: rgb(62, 121, 180);;
+    width: 45%;
+}
+.hand-hours {
+    transform: translateY(-50%) rotate(45deg);
+    background-color: rgba(255, 255, 255, .8);
+    width: 25%;
+    height: 2%;
+}
+.date-box {
+    position: absolute;
+    top: 50%;
+    right: 15%;
+    transform: translateY(-50%);
+    border-radius: .5rem;
+    box-shadow: 0 0 .2rem white;
+    padding: .5rem;
+    color: white;
+    font-size: 1.5rem;
+    text-align: center;
+}
+.hour-clock {
+    position: absolute;
+    font-size: 2rem;
+    color: white;
+    z-index: 100;
+}
+.hour-clock:nth-child(1) {
+    top: .5rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.hour-clock:nth-child(2){
+    top: 50%;
+    right: .5rem;
+    transform: translateY(-50%);
+}
+.hour-clock:nth-child(3){
+    bottom: .5rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.hour-clock:nth-child(4){
+    top: 50%;
+    left: .5rem;
+    transform: translateY(-50%);
+}
+.hour-clock:nth-child(5) {
+    top: 10%;
+    right: 25%;
+/*    transform: translateX(-50%);*/
+}
+.hour-clock:nth-child(6) {
+    top: 25%;
+    right: 10%;
+}
+.hour-clock:nth-child(7) {
+    bottom: 25%;
+    right: 10%;
+}
+.hour-clock:nth-child(8) {
+    bottom: 10%;
+    right: 25%;
+}
+.hour-clock:nth-child(9) {
+    bottom: 10%;
+    left: 25%;
+}
+.hour-clock:nth-child(10) {
+    bottom: 25%;
+    left: 10%;
+}
+.hour-clock:nth-child(11) {
+    top: 25%;
+    left: 10%;
+}
+.hour-clock:nth-child(12) {
+    top: 10%;
+    left: 25%;
 }
 /*footer*/
 .footer-fixed {
