@@ -4,13 +4,14 @@ html {
 * {
     margin: 0;
     padding: 0;
-    font-family: sans-serif;
+    font-family: 'Nothing You Could Do', cursive;
 }
 /*background wrapper*/
 .bg-wrap{
     position: relative;
     background-color: rgba(0, 0, 0, .85);
     min-height: 100vh;
+    
 }
 .bg-wrap::after {
     content: '';
@@ -98,7 +99,7 @@ html {
     color: rgb(62, 121, 180);
     font-weight: bold;
     text-align: center;
-    font-size: 20px;
+    font-size: 2rem;
 }
 /*actual date&time*/
 .spanDate, .spanDay, .spanTime {
@@ -109,12 +110,16 @@ html {
 .span-day {
     color: rgb(237, 25, 74);
 }
+.spanTime {
+    min-height: 3rem;
+    line-height: 3rem;
+}
 /*analog watch*/
 
 .analog-clock {
     width: 30rem;
     height: 30rem;
-    margin: 2rem auto 0 auto;
+    margin: 2rem auto;
 }
 .face-clock {
     height: 100%;
@@ -173,14 +178,15 @@ html {
     transform: translateY(-50%);
     border-radius: .5rem;
     box-shadow: 0 0 .2rem white;
-    padding: .5rem;
+    padding: .75rem;
     color: white;
     font-size: 1.5rem;
+    line-height: 1.5rem;
     text-align: center;
 }
 .hour-clock {
     position: absolute;
-    font-size: 2rem;
+    font-size: 3rem;
     color: white;
     z-index: 100;
 }
@@ -239,7 +245,7 @@ html {
 }
 /*footer*/
 .footer-fixed {
-    position: absolute;
+/*    position: absolute;*/
     bottom: 0;
     left: 0;
     width: 100%;
