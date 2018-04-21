@@ -1,2 +1,2 @@
 # Clock
-Actual local time and date. Not server time.
+Actual server time & date.
