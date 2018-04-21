@@ -58,5 +58,33 @@ const increaseTime = function(el){
         clearInterval(counter)
         // get time and start increasing from there;
         actualTimeDate();
-    }, 60000);
+    }, 300000);
 }
+// set current time zone title and subtitle;
+const setZoneTitle = function(str){
+    const titleContainer = document.getElementById('zone-title'),
+          subtitle = document.getElementById('zone-subtitle');
+    let subtitleText = '';
+    titleContainer.innerHTML = str;
+    switch(str){
+        case 'London':
+            subtitleText = 'UTC+(00:00)';
+            break;
+        case 'New York':
+            subtitleText = 'UTC-(04:00)';
+            break;
+        case 'Tokyo':
+            subtitleText = 'UTC+(09:00)';
+            break;
+        case 'Moscow':
+            subtitleText = 'UTC+(03:00)';
+            break;
+              }
+    // set current subtitle;
+    subtitle.textContent = subtitleText;
+    // get current time&date depending on given time zone;
+    getNewTimeZone(str);
+}
+
+
+

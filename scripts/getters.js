@@ -27,6 +27,20 @@ const actualTimeDate = function(str){
     }
     // open new request to database;
     xmlhttp.open('GET', './time-date.php', true);
+    // set header;
+    xmlhttp.setRequestHeader('time-zone', str);
     // send created request to server;
     xmlhttp.send();
 }
+// set current time zone title and subtitle;
+
+// get choosen time zone data;
+const getNewTimeZone = function(str){
+    // use ajax to update time&date;
+    
+    
+    console.log();
+}
+
+
+
