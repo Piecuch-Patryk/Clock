@@ -1,9 +1,9 @@
 // increase time locally and calibrate with server every minute;
 const increaseTime = function(el){
     const array = el.split(':');
-    var hours = Number(array.splice(0,1)),
-        minutes = Number(array.splice(1,1)),
-        seconds = Number(array.splice(2,1));
+    var hours = Number(array[0]),
+        minutes = Number(array[1]),
+        seconds = Number(array[2]);
     
     console.log(hours + ':' + minutes + ':' + seconds);
     // increase time;
@@ -57,6 +57,6 @@ const increaseTime = function(el){
         // stop increasing;
         clearInterval(counter)
         // get time and start increasing from there;
-        dateTime();
+        actualTimeDate();
     }, 60000);
 }
