@@ -5,8 +5,10 @@ const actualTimeDate = function(str){
         // if response ready;
         if(this.readyState == 4 && this.status == 200){
             const currentTimeDate = JSON.parse(this.responseText);
+            
             console.log(currentTimeDate);
             
+            setTimeDate(currentTimeDate);
         }
     }
     // open new request to database;
