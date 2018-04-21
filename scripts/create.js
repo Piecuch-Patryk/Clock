@@ -16,5 +16,5 @@ function createSpans(){
     clockContainer.appendChild(spanDate);
     clockContainer.appendChild(spanTime);
     // get actual server time; London/Europe default;
-    actualTimeDate('both');
+    actualTimeDate('both', 'London');
 }

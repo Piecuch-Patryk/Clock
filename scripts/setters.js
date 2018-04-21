@@ -1,6 +1,7 @@
 // increase time locally and calibrate with server every minute;
 const increaseTime = function(el){
-    const array = el.split(':');
+    const array = el.split(':'),
+          timeContainer = document.getElementById('time');
     var hours = Number(array[0]),
         minutes = Number(array[1]),
         seconds = Number(array[2]);
@@ -12,7 +13,6 @@ const increaseTime = function(el){
         let h = '',
             m = '',
             s = '';
-
         if(seconds < 60){
             seconds++
             s = seconds;
@@ -50,14 +50,19 @@ const increaseTime = function(el){
         // create current time to display;
         const actualTime = `${h}:${m}:${s}`;
         // place time in DOM;
-        document.getElementById('time').innerHTML = actualTime;
+        timeContainer.innerHTML = actualTime;
+        
+        console.log(actualTime);
+        
     }, 1000);
-    // calibrate every minute;
+    // calibrate every five minutes;
     setTimeout(function calibrateTime(){
+        // current time zone name;
+        const zoneName = document.querySelector('.active-nav').textContent;
         // stop increasing;
         clearInterval(counter)
         // get time and start increasing from there;
-        actualTimeDate();
+        actualTimeDate('both', zoneName);
     }, 300000);
 }
 // set current time zone title and subtitle;
@@ -83,7 +88,7 @@ const setZoneTitle = function(str){
     // set current subtitle;
     subtitle.textContent = subtitleText;
     // get current time&date depending on given time zone;
-    getNewTimeZone(str);
+    actualTimeDate('both', str);
 }
 
 

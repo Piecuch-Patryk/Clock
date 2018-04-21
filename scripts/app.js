@@ -15,8 +15,10 @@ document.querySelector('#navigation').addEventListener('click', function(e){
             // change active nav element;
             document.querySelector('.active-nav').classList.remove('active-nav');
             current.classList.add('active-nav');
-            // get choosen time zone;
+            // set choosen title;
             setZoneTitle(current.textContent);
+            // get new time&date depending on choosen time zone;
+            actualTimeDate('both', current.textContent)
         }
     }
 })
