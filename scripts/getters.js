@@ -16,11 +16,11 @@ const actualTimeDate = function(str, zoneName){
                 if(str === 'both'){
                     day.innerHTML = currentTimeDate[0];
                     date.innerHTML = currentTimeDate[1];
-                    // increase values; calibrate time every five minutes;
+                    // increase values; calibrate time every minute;
                     increaseTime(currentTimeDate);
                 }
                 else {
-                    // increase values; calibrate time every five minutes;
+                    // increase values; calibrate time every minute;
                     increaseTime(currentTimeDate);
                 }
             }

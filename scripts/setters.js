@@ -55,7 +55,7 @@ const increaseTime = function(el){
     }, 1000)
     console.log();
     
-    // calibrate every five minutes;
+    // calibrate every minute;
     setTimeout(function calibrateTime(){
         // current time zone name;
         const zoneName = document.querySelector('.active-nav').textContent;
@@ -63,7 +63,7 @@ const increaseTime = function(el){
         clearInterval(counter)
         // get time and start increasing from there;
         actualTimeDate('both', zoneName);
-    }, 300000);
+    }, 60000);
 }
 // set current time zone title and subtitle;
 const setZoneTitle = function(str){
