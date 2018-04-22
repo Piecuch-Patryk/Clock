@@ -52,7 +52,7 @@ const increaseTime = function(el){
         timeContainer.innerHTML = actualTime;
         // animate clock hands; rotate depending on given time;
         rotateHands(actualTime, el[1]);
-    }, 1000);
+    }, 1000)
     console.log();
     
     // calibrate every five minutes;
