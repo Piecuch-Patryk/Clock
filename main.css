@@ -148,7 +148,7 @@ html {
     border-top-right-radius: 50%;
     background-color: rgb(237, 25, 74);
     transform-origin: left;
-    transform: translateY(-50%);
+    transform: rotate(-90deg);
 }
 .hand-sec-dot {
     position: absolute;
@@ -165,7 +165,6 @@ html {
     width: 45%;
 }
 .hand-hours {
-    transform: translateY(-50%);
     background-color: rgba(255, 255, 255, .8);
     width: 25%;
     height: 2%;
