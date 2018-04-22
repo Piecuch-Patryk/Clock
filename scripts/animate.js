@@ -6,12 +6,7 @@ const rotateHands = function(str, num){
           seconds = 6 * Number(str.split(':').splice(2, 1)) - 90,
           minutes = 6 * Number(str.split(':').splice(1, 1)) - 90,
           hours = 30 * ((str.split(':').splice(0, 1) % 12) + str.split(':').splice(1, 1) / 60) - 90,
-          date = num.split('/').splice(0, 1);
-          console.log(hours);
-    
-//    seconds = 180;
-//    minutes = 90;
-//    hours = ;
+          date = num.split('/').splice(0, 1);    
     
     hands[0].style.transform = 'rotate(' + seconds + 'deg)';
     hands[1].style.transform = 'rotate(' + minutes + 'deg)';

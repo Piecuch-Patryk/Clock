@@ -1,13 +1,19 @@
+// declare interval variable; *** Global Scope ***
+var newInterval;
 // increase time locally and calibrate with server every minute;
 const increaseTime = function(el){
     const array = el[2].split(':'),
-          timeContainer = document.getElementById('time');
+          timeContainer = document.getElementById('time'),
+          // hidden DOM element shows interval on/off;
+          intervalHiddenEl = document.getElementById('interval-info');
           
     var hours = Number(array[0]),
         minutes = Number(array[1]),
         seconds = Number(array[2]);
+    
     // increase time;
-    var counter = setInterval(function(){
+    var counter = function(){
+
         // these variables are cleared every second, important;
         let h = '',
             m = '',
@@ -52,7 +58,20 @@ const increaseTime = function(el){
         timeContainer.innerHTML = actualTime;
         // animate clock hands; rotate depending on given time;
         rotateHands(actualTime, el[1]);
-    }, 1000)
+    }
+    // start interval if off;
+    if(intervalHiddenEl.value === 'off'){
+        intervalHiddenEl.value = 'on';
+        newInterval = setInterval(function(){
+            counter();
+        },1000);
+    }else {
+        // restart current interval;
+        clearInterval(newInterval);
+        newInterval = setInterval(function(){
+            counter();
+        },1000);
+    }
     console.log();
     
     // calibrate every minute;
